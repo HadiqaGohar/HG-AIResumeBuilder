@@ -15,7 +15,7 @@
   },
   "build": {
     "env": {
-      "NEXT_PUBLIC_FASTAPI_URL": "https://your-backend-url.vercel.app"
+      "NEXT_PUBLIC_FASTAPI_URL": "hg-ai-resume-builder.vercel.app"
     }
   }
 }
