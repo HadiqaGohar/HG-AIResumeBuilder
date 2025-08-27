@@ -1,0 +1,21 @@
+{
+  "functions": {
+    "src/app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "NEXTAUTH_URL": "@nextauth_url",
+    "NEXTAUTH_SECRET": "@nextauth_secret",
+    "GOOGLE_CLIENT_ID": "@google_client_id",
+    "GOOGLE_CLIENT_SECRET": "@google_client_secret",
+    "MONGODB_URI": "@mongodb_uri",
+    "GMAIL_USER": "@gmail_user",
+    "GMAIL_APP_PASSWORD": "@gmail_app_password"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_FASTAPI_URL": "https://your-backend-url.vercel.app"
+    }
+  }
+}

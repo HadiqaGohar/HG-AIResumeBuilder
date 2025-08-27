@@ -1,0 +1,68 @@
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Disallow admin, API, and system areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /.well-known/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/
+
+# Allow important public pages
+Allow: /template
+Allow: /dashboard
+Allow: /upload-resume
+Allow: /about
+Allow: /contact
+Allow: /privacy-policy
+Allow: /term
+Allow: /faq
+Allow: /resume/
+Allow: /upload-resume/ai-templates/
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Sitemap locations
+Sitemap: https://hg-resume-builder.vercel.app/sitemap.xml
+
+# Host directive
+Host: https://hg-resume-builder.vercel.app

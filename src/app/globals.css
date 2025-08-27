@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:ital,wght@0,700;0,800;1,700;1,800&display=swap");
+
+@import "tailwindcss";
+/* @tailwind base; */
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+:root {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+/* Apply base font if you want */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom Keyframes for Infinite Scroll */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Apply the animation to the custom class */
+.logo-scroll {
+  animation: infinite-scroll 25s linear infinite; /* Adjust 25s for speed */
+}
+
+/* Optional: Pause animation on hover */
+.logo-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* app/globals.css */
+
+/* Your existing Tailwind CSS imports */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* --- Custom Keyframes for Infinite Scrolling --- */
+
+/* Keyframes for Right-to-Left (RTL) movement */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(
+      -50%
+    ); /* Moves content left by 50% of its duplicated width */
+  }
+}
+
+/* Keyframes for Left-to-Right (LTR) movement */
+@keyframes infinite-scroll-ltr {
+  from {
+    transform: translateX(
+      -50%
+    ); /* Starts shifted left to allow scrolling in from left */
+  }
+  to {
+    transform: translateX(
+      0
+    ); /* Scrolls back to original position, moving right */
+  }
+}
+
+/* --- Animation Classes --- */
+
+/* Class for Right-to-Left (RTL) scrolling elements (e.g., logos, middle pill row) */
+.animate-scroll-rtl {
+  animation: infinite-scroll 25s linear infinite; /* Adjust 25s for desired speed */
+}
+
+/* Class for Left-to-Right (LTR) scrolling elements (e.g., top/bottom pill rows) */
+.animate-scroll-ltr {
+  animation: infinite-scroll-ltr 25s linear infinite; /* Adjust 25s for desired speed */
+}
+
+/* Optional: Pause animation on hover for both directions */
+.animate-scroll-rtl:hover,
+.animate-scroll-ltr:hover {
+  animation-play-state: paused;
+}
+
+/* --- Your other global styles below --- */
+(e.g., body, h1, etc.)
+
+.contact-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+.contact-left-title h2 {
+  font-weight: 600;
+  color: #a363aa;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+.contact-left-title hr {
+  border: none;
+  width: 120px;
+  height: 5px;
+  background-color: #a363aa;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.contact-inputs {
+  width: 400px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  font-weight: 500;
+  color: #b692c2;
+  border-radius: 50px;
+}
+.contact-left textarea {
+  height: 140px;
+  padding-top: 15px;
+  border-radius: 20px;
+}
+.contact-inputs:focus {
+  border: 2px solid #694f8e;
+}
+.contact-inputs::placeholder {
+  color: #a9a9a9;
+}
+.contact-left button {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 16px;
+  color: #522258;
+  gap: 10px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #e2bfd9, #e3a5c7);
+}
+
+.contact-left button img {
+  height: 15px;
+}
+.contact-right img {
+  width: 500px;
+}
+@media (max-width: 800px) {
+  .contact-inputs {
+    width: 80vw;
+  }
+  .contact-right {
+    display: none;
+  }
+}
+
+.contact-left button {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 16px;
+  color: #522258;
+  gap: 10px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(270deg, #e2bfd9, #e3a5c7);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-left button:hover {
+  background: linear-gradient(270deg, #e3a5c7, #694f8e);
+  transform: scale(1.05);
+}
+
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #694f8e;
+  color: #fff;
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* MOUSE */
+.flower {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(
+    circle,
+    #ff69b4,
+    #9370db,
+    #87ceeb
+  ); /* Pink, Purple, Blue gradient */
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fadeOut 1s ease-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+/* Custom animations for AnimatedHero component */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-scroll-right {
+  animation: scroll-right 20s linear infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Additional animations for DynamicTextBanner */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-right-slow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 25s linear infinite;
+}
+
+.animate-scroll-right-slow {
+  animation: scroll-right-slow 30s linear infinite;
+}
+
+/* Print Styles for Resume Preview */
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  .template-preview-container {
+    background: white !important;
+    padding: 0 !important;
+  }
+
+  .preview-wrapper {
+    background: white !important;
+    padding: 0 !important;
+  }
+
+  .resume-page {
+    transform: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* Hide UI elements during print */
+  button,
+  .fixed,
+  .absolute {
+    display: none !important;
+  }
+
+  /* Hide elements with print-hidden class */
+  .print-hidden {
+    display: none !important;
+  }
+
+  /* Ensure proper page breaks */
+  .template-renderer {
+    page-break-inside: avoid;
+  }
+}
+
+/* Resume Preview Styling */
+.template-preview-container {
+  background: #f5f5f5;
+}
+
+.preview-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.resume-page {
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* PDF Generation Styles */
+#resume-template {
+  background: white !important;
+  color: black !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+#resume-template * {
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Ensure colors are preserved in PDF */
+#resume-template .bg-purple-300,
+#resume-template .bg-yellow-300,
+#resume-template .bg-blue-300,
+#resume-template [style*="background-color"] {
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}

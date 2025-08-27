@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Allow: /template
+Allow: /dashboard
+Allow: /upload-resume
+Allow: /about
+Allow: /contact
+Allow: /privacy-policy
+Allow: /term
+
+# Block admin pages
+Disallow: /admin/
+Disallow: /api/
+
+# Block temporary or development files
+Disallow: /*.json$
+Disallow: /temp/
+Disallow: /test/
+
+# Sitemap location
+Sitemap: https://hg-resume-builder.vercel.app/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
