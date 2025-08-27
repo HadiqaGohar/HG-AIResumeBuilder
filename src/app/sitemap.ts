@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://hg-resume-builder.vercel.app'
+  const baseUrl = 'https://hg-ai-resume-builder.vercel.app/'
   const currentDate = new Date()
   
   // Static pages
