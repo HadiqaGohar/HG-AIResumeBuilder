@@ -43,7 +43,7 @@ const nextConfig = {
   },
 
   experimental: {
-    esmExternals: "loose", // ESM packages like @react-pdf/renderer ke liye
+    esmExternals: "loose", 
     turbo: false,        // Agar turbopack issue kare to isko uncomment kar sakti ho
   },
 };
