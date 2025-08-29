@@ -45,7 +45,7 @@
 //   const inputRef = useRef<HTMLInputElement>(null);
   
 //   // Dragging state - Simple bottom-right positioning
-//   const [position, setPosition] = useState({ x: 20, y: 20 }); // Simple fixed position from bottom-right
+//   const [position, setPosition] = useState({ x: 20, y: 20 }); // Distance from bottom-right corner
 //   const [isDragging, setIsDragging] = useState(false);
 //   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
 //   const chatbotRef = useRef<HTMLDivElement>(null);
@@ -90,7 +90,7 @@
 //     }
 //     // Set initialized to true after component mounts
 //     setIsInitialized(true);
-//   }, []);
+//   }, [messages]);
 
 //   useEffect(() => {
 //     scrollToBottom();
@@ -325,16 +325,17 @@
 //   useEffect(() => {
 //     const handleMouseMove = (e: MouseEvent) => {
 //       if (isDragging) {
-//         const newX = e.clientX - dragOffset.x;
-//         const newY = e.clientY - dragOffset.y;
+//         const iconX = e.clientX - dragOffset.x;
+//         const iconY = e.clientY - dragOffset.y;
         
-//         // Keep within screen bounds
-//         const maxX = window.innerWidth - 56; // 56px = w-14
-//         const maxY = window.innerHeight - 56;
+//         // Convert to distance from bottom-right corner
+//         const newX = window.innerWidth - iconX - 56; // Distance from right edge
+//         const newY = window.innerHeight - iconY - 56; // Distance from bottom edge
         
+//         // Keep within screen bounds (minimum 0, maximum screen size minus icon size)
 //         setPosition({
-//           x: Math.max(0, Math.min(newX, maxX)),
-//           y: Math.max(0, Math.min(newY, maxY))
+//           x: Math.max(0, Math.min(newX, window.innerWidth - 56)),
+//           y: Math.max(0, Math.min(newY, window.innerHeight - 56))
 //         });
 //       }
 //     };
@@ -343,15 +344,16 @@
 //       if (isDragging) {
 //         e.preventDefault();
 //         const touch = e.touches[0];
-//         const newX = touch.clientX - dragOffset.x;
-//         const newY = touch.clientY - dragOffset.y;
+//         const iconX = touch.clientX - dragOffset.x;
+//         const iconY = touch.clientY - dragOffset.y;
         
-//         const maxX = window.innerWidth - 56;
-//         const maxY = window.innerHeight - 56;
+//         // Convert to distance from bottom-right corner
+//         const newX = window.innerWidth - iconX - 56;
+//         const newY = window.innerHeight - iconY - 56;
         
 //         setPosition({
-//           x: Math.max(0, Math.min(newX, maxX)),
-//           y: Math.max(0, Math.min(newY, maxY))
+//           x: Math.max(0, Math.min(newX, window.innerWidth - 56)),
+//           y: Math.max(0, Math.min(newY, window.innerHeight - 56))
 //         });
 //       }
 //     };
@@ -381,7 +383,7 @@
 //       {isInitialized && (
 //         <div 
 //           ref={chatbotRef}
-//           className="fixed z-50"
+//           className="fixed z-[70]"
 //           style={{
 //             right: `${position.x}px`,
 //             bottom: `${position.y}px`,
@@ -393,7 +395,7 @@
 //           }`}
 //           onMouseDown={handleMouseDown}
 //           onTouchStart={handleTouchStart}
-//           onClick={(e) => {
+//           onClick={() => {
 //             // Only open chat if not dragging
 //             if (!isDragging) {
 //               setIsOpen(!isOpen);
@@ -407,12 +409,12 @@
 //         )}
         
 //         {/* Drag hint tooltip - show when in initial bottom-right position */}
-//         {!isDragging && isInitialized && position.x === (window.innerWidth - 56 - 16) && position.y === (window.innerHeight - 56 - 16) && (
+//         {/* {!isDragging && isInitialized && position.x === 20 && position.y === 20 && (
 //           <div className="absolute -left-32 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg animate-bounce">
 //             Drag to move!
 //             <div className="absolute right-0 top-1/2 transform translate-x-1 -translate-y-1/2 border-4 border-transparent border-l-gray-800"></div>
 //           </div>
-//         )}
+//         )} */}
 //         </div>
 //       )}
 
@@ -422,42 +424,42 @@
 //           className={`fixed ${
 //             isMaximized 
 //               ? 'inset-0' 
-//               : 'w-96 h-[600px]'
-//           } bg-white shadow-2xl rounded-lg z-40 flex flex-col transition-all duration-300 border border-gray-200`}
+//               : 'w-96 h-[600px] rounded-lg'
+//           } bg-white shadow-2xl z-[60] flex flex-col transition-all duration-300 border border-gray-200`}
 //           style={
 //             !isMaximized ? {
-//               left: `${Math.min(position.x, window.innerWidth - 384)}px`, // 384px = w-96
-//               top: `${Math.max(position.y - 600, 20)}px`, // 600px = h-[600px]
+//               right: `${Math.min(position.x, window.innerWidth - 384)}px`, // 384px = w-96
+//               bottom: `${Math.max(position.y - 600, 20)}px`, // 600px = h-[600px]
 //             } : {}
 //           }
 //         >
 //           {/* Enhanced Header */}
-//           <div className="flex justify-between items-center p-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-t-lg">
+//           <div className={`flex justify-between items-center p-4 bg-gradient-to-r from-purple-500 to-blue-500 ${isMaximized ? 'rounded-none' : 'rounded-t-lg'}`}>
 //             <div className="flex items-center space-x-2">
 //               <BiBot className="text-white text-xl" />
 //               <h2 className="text-lg font-semibold text-white">Smart Resume Assistant</h2>
 //             </div>
 //             <div className="flex space-x-2">
 //               <button
-//                 className="text-white hover:text-gray-200 p-1 rounded transition-colors"
+//                 className="text-white hover:bg-white hover:bg-opacity-20 p-2 rounded-full transition-colors"
 //                 onClick={clearConversation}
 //                 title="Clear conversation"
 //               >
-//                 <FiTrash2 size={16} />
+//                 <FiTrash2 size={18} />
 //               </button>
 //               <button
-//                 className="text-white hover:text-gray-200 p-1 rounded transition-colors"
+//                 className="text-white hover:bg-white hover:bg-opacity-20 p-2 rounded-full transition-colors"
 //                 onClick={() => setIsMaximized(!isMaximized)}
-//                 title={isMaximized ? "Minimize" : "Maximize"}
+//                 title={isMaximized ? "Minimize to window" : "Maximize to fullscreen"}
 //               >
-//                 {isMaximized ? <FiMinimize2 size={16} /> : <FiMaximize2 size={16} />}
+//                 {isMaximized ? <FiMinimize2 size={18} /> : <FiMaximize2 size={18} />}
 //               </button>
 //               <button
-//                 className="text-white hover:text-gray-200 p-1 rounded transition-colors"
+//                 className="text-white hover:bg-white hover:bg-opacity-20 p-2 rounded-full transition-colors"
 //                 onClick={() => setIsOpen(false)}
-//                 title="Close"
+//                 title="Close chat"
 //               >
-//                 <FiX size={16} />
+//                 <FiX size={18} />
 //               </button>
 //             </div>
 //           </div>
@@ -589,6 +591,7 @@
 // };
 
 // export default Chatbot;
+
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { TbMessageChatbotFilled } from "react-icons/tb";
@@ -660,6 +663,12 @@ const Chatbot: React.FC = () => {
     references: [],
     languages: [],
   });
+
+  // Get backend URL - Railway production ya local development
+  const BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 
+                      (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+                        ? 'http://localhost:8000' 
+                        : 'https://hg-airesumebuilder-backend-production.up.railway.app');
 
   // Quick action suggestions
   const quickActions = [
@@ -807,7 +816,8 @@ What would you like to know? Try asking about "templates", "how to build resume"
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/api/chatbot', {
+      // Use Next.js API route as proxy instead of direct backend call
+      const response = await fetch('/api/chatbot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
@@ -818,14 +828,15 @@ What would you like to know? Try asking about "templates", "how to build resume"
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorData = await response.json();
+        throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
       
       const botMessage: Message = { 
         role: 'bot', 
-        content: data.response || 'Sorry, I couldn\'t process your request.',
+        content: data.response || data.error || 'Sorry, I couldn\'t process your request.',
         type: data.type,
         sources: data.sources,
         suggestions: data.suggestions,
@@ -860,10 +871,14 @@ What would you like to know? Try asking about "templates", "how to build resume"
 
   const clearConversation = async () => {
     try {
-      await fetch('http://localhost:8000/api/chatbot/session/clear', {
+      // Use Next.js API route as proxy for clearing session
+      await fetch('/api/chatbot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ session_id: sessionId }),
+        body: JSON.stringify({ 
+          message: 'clear_session',
+          session_id: sessionId
+        }),
       });
       
       setMessages([{
@@ -873,6 +888,12 @@ What would you like to know? Try asking about "templates", "how to build resume"
       }]);
     } catch (error) {
       console.error('Error clearing conversation:', error);
+      // Fallback - just clear locally
+      setMessages([{
+        role: 'bot',
+        content: "Conversation cleared! How can I help you today?",
+        type: 'welcome'
+      }]);
     }
   };
 
