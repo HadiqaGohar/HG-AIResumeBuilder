@@ -5,6 +5,7 @@ export async function POST(req: NextRequest) {
     const requestBody = await req.json(); // Get JSON body from frontend (education, skills)
 
     const FASTAPI_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 'https://hg-airesumebuilder-backend-production.up.railway.app' || 'http://localhost:8000' ;
+    
 
     console.log(`[Next.js API] Forwarding resume request to FastAPI: ${FASTAPI_URL}/api/resume`);
 
