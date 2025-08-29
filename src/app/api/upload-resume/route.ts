@@ -138,7 +138,7 @@ export async function POST(req: NextRequest) {
 
     // --- IMPORTANT: Replace 'http://localhost:8000' with your actual FastAPI backend URL ---
     // Example for a deployed backend: const FASTAPI_BACKEND_URL = "https://your-fastapi-app.vercel.app";
-    const FASTAPI_BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || "http://localhost:8000"|| 'https://ehmt8mro7sonvp9cs5oblz.streamlit.app/'; // Using an environment variable is best practice
+    const FASTAPI_BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || "http://localhost:8000"|| 'https://ehmt8mro7sonvp9cs5oblz.streamlit.app/' || 'https://hg-airesumebuilder-backend-production.up.railway.app/'; // Using an environment variable is best practice
 
     const backendResponse = await fetch(`${FASTAPI_BACKEND_URL}/api/resume/extract`, {
       method: "POST",
