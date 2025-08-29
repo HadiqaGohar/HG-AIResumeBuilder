@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { OptimizationResponse } from '../../../../../lib/api'; // Import the OptimizationResponse type from lib/api.ts
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL  || 'https://hg-airesumebuilder-backend-production.up.railway.app' || 'http://localhost:8000';
+const BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL  || 'https://hg-airesumebuilder-backend-production.up.railway.app';
 
 export async function POST(request: NextRequest) {
   try {
