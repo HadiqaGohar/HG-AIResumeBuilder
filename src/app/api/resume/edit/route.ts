@@ -4,7 +4,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    const FASTAPI_BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || "http://localhost:8000" || 'https://hg-airesumebuilder-backend-production.up.railway.app';
+    const FASTAPI_BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 'https://hg-airesumebuilder-backend-production.up.railway.app' ||  "http://localhost:8000";
 
     const backendResponse = await fetch(`${FASTAPI_BACKEND_URL}/api/resume/edit`, {
       method: "POST",
