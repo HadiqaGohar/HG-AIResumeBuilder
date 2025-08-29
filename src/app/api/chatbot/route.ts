@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Get backend URL from environment
-    const FASTAPI_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 'https://hg-airesumebuilder-backend-production.up.railway.app';
+    const FASTAPI_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 'https://hg-airesumebuilder-backend-production.up.railway.app/';
 
     // Forward the request to the FastAPI backend
     const response = await fetch(`${FASTAPI_URL}/api/chatbot`, {
