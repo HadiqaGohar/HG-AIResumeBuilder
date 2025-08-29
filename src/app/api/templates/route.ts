@@ -122,7 +122,7 @@ export async function GET() {
   }
 }
 
-// Handle OPTIONS requests for CORS
+// Handle OPTIONS requests for CORS.
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
