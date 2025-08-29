@@ -3,6 +3,7 @@ import { OptimizationResponse } from '../../../../../lib/api'; // Import the Opt
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL  || 'https://hg-airesumebuilder-backend-production.up.railway.app';
 
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
