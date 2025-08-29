@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   try {
     // Get backend URL from environment
-    const FASTAPI_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 'https://hg-airesumebuilder-backend-production.up.railway.app';
+    const FASTAPI_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 'https://hg-airesumebuilder-backend-production.up.railway.app' || 'http://localhost:8000';
     
     const response = await fetch(`${FASTAPI_URL}/api/templates`, {
       method: 'GET',
