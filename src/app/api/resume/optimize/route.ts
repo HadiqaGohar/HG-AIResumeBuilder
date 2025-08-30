@@ -188,7 +188,7 @@ export async function POST(request: NextRequest) {
     console.log(`[Next.js API] Successfully optimized resume`);
     return NextResponse.json(data);
 
-  } catch (error: any) {
+  } catch (error) {
     // Clear timeout on error
     clearTimeout(timeoutId);
 
