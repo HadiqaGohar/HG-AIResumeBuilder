@@ -665,10 +665,10 @@ const Chatbot: React.FC = () => {
   });
 
   // Get backend URL - Railway production ya local development
-  const BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 
-                      (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
-                        ? 'http://localhost:8000' 
-                        : 'https://hg-airesumebuilder-backend-production.up.railway.app');
+  // const BACKEND_URL = process.env.NEXT_PUBLIC_FASTAPI_URL || 
+  //                     (typeof window !== 'undefined' && window.location.hostname === 'localhost' 
+  //                       ? 'http://localhost:8000' 
+  //                       : 'https://hg-airesumebuilder-backend-production.up.railway.app');
 
   // Quick action suggestions
   const quickActions = [
