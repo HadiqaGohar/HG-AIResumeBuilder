@@ -163,7 +163,7 @@ export async function POST(req: NextRequest) {
     // Return the extracted data to your Next.js frontend
     return NextResponse.json(extractedData, { status: 200 });
     
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error in Next.js API route /api/upload-resume:", error);
     
     // Handle specific error types
