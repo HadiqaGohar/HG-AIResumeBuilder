@@ -94,7 +94,7 @@ export async function GET() {
     console.log(`[Templates API] Successfully fetched ${data.length} templates`);
     
     return NextResponse.json(data);
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error fetching templates:', error);
     
     // Handle specific error types
