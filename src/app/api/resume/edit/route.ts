@@ -154,7 +154,7 @@ export async function POST(req: NextRequest) {
     const editedData = await backendResponse.json();
     return NextResponse.json(editedData, { status: 200 });
 
-  } catch (error: any) {
+  } catch (error) {
     // Clear timeout on error
     clearTimeout(timeoutId);
 
