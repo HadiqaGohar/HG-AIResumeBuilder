@@ -1846,7 +1846,7 @@ export default function Templates() {
                     <option value="id">Sort by Order (1,2,3...)</option>
                     <option value="popularity">Sort by Popularity</option>
                     <option value="name">Sort by Name</option>
-                    <option value="category">Sort by Category</Option>
+                    <option value="category">Sort by Category</option>
                   </select>
 
                   <div className="flex items-center gap-2">
