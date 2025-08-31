@@ -462,6 +462,11 @@
 //     </section>
 //   );
 // }
+
+
+
+
+
 'use client';
 import Link from "next/link";
 import Image from "next/image";
@@ -510,8 +515,12 @@ const activeTemplates = [
 export default function ActiveTemplates() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // Set isClient to true once component mounts on the client
+    setIsClient(true);
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -526,7 +535,14 @@ export default function ActiveTemplates() {
   const getVisibleTemplates = () => {
     const totalTemplates = activeTemplates.length;
     const visibleTemplates = [];
-    const count = isMobile ? 1 : (window.innerWidth < 1024 ? 2 : 3); // Changed let to const
+    
+    // Default to desktop view during SSR
+    let count = 3;
+    
+    // Only use window-based logic on client side
+    if (isClient) {
+      count = isMobile ? 1 : (window.innerWidth < 1024 ? 2 : 3);
+    }
 
     for (let i = 0; i < count; i++) {
       const index = (currentIndex + i) % totalTemplates;
@@ -738,7 +754,7 @@ export default function ActiveTemplates() {
                 View All Templates
               </button>
             </Link>
-            <Link href="/upload-resume/ai-templates">
+            <Link href="/upload-resume">
               <button className="bg-white/80 backdrop-blur-sm border border-purple-300 text-purple-600 hover:bg-purple-50 px-4 py-2 md:px-6 md:py-3 rounded-full transition-all duration-300 font-semibold text-sm md:text-base transform hover:scale-105 shadow-md hover:shadow-lg">
                 Try AI Templates
               </button>
