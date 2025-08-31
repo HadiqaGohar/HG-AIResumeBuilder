@@ -1500,7 +1500,7 @@ export default function Templates() {
                     Get Notified When New Templates Launch!
                   </h3>
                   <p className="text-gray-600 text-sm mb-3">
-                    We're working hard to bring you more AI-powered templates. Want to be the first to know?
+                    We&apos;re working hard to bring you more AI-powered templates. Want to be the first to know?
                   </p>
                   <div className="flex gap-2">
                     <input
