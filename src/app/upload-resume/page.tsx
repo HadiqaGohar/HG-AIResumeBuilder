@@ -371,7 +371,9 @@ export default function UploadResume() {
         if (selectedTemplate) {
           router.push(`/resume/customize/${selectedTemplate}`);
         } else {
-          router.push("/upload-resume/ai-templates");
+          // ...............................For check..........................................
+          // router.push("/upload-resume/ai-templates");
+          router.push("/template");
         }
       } catch (err: unknown) {
         const message =
