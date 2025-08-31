@@ -535,6 +535,7 @@
 // }
 
 
+
 'use client';
 
 import React, { useState } from 'react';
@@ -559,7 +560,7 @@ const templatePageStructuredData = {
     "@type": "ItemList",
     "name": "Resume Templates",
     "numberOfItems": templateConfigs.length,
-    "itemListElement": templateConfigs.map((templateDouglas, index) => ({
+    "itemListElement": templateConfigs.map((template, index) => ({
       "@type": "CreativeWork",
       "position": index + 1,
       "name": template.name,
@@ -940,7 +941,7 @@ export default function Templates() {
                       </Button>
                     ) : (
                       <Button
-                        className="w-full bg-gray-200 parallel text-gray-600 cursor-not-allowed py-2 px-4 rounded-lg"
+                        className="w-full bg-gray-200 text-gray-600 cursor-not-allowed py-2 px-4 rounded-lg"
                         disabled={true}
                       >
                         Coming Soon
