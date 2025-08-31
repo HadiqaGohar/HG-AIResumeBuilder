@@ -118,14 +118,13 @@
 //   );
 // }
 
-
 'use client'
 import Link from "next/link";
 import { HiSparkles, HiTemplate, HiDocumentDownload, HiEye } from "react-icons/hi";
 
 export default function Features() {
   return (
-    <section className="bg-white py-12 px-4 sm:px-6 md:px-8">
+    <section className="bg-white py-8 px-4 sm:px-6 md:px-8">
       <style jsx>{`
         @keyframes fadeInUp {
           0% {
@@ -155,67 +154,63 @@ export default function Features() {
         .card {
           transition: all 0.3s ease;
         }
-        .card:nth-child(1) { min-height: 230px; }
-        .card:nth-child(2) { min-height: 230px; }
-        .card:nth-child(3) { min-height: 230px; }
-        .card:nth-child(4) { min-height: 230px; }
         .card:hover {
           transform: rotate(0deg) scale(1.05) translateZ(10px);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
       `}</style>
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl uppercase mt-10 md:mt-20 font-light text-gray-900 mb-4 animate-fadeInUp">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase mt-8 md:mt-16 font-light text-gray-900 mb-3 md:mb-4 animate-fadeInUp">
           Unleash Your <span className="font-black">Resume </span> Potential
         </h2>
         
-        <p className="text-gray-600 text-base sm:text-lg md:text-xl mb-8 md:mb-10 animate-fadeInUp">
+        <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl mb-6 md:mb-8 lg:mb-10 animate-fadeInUp">
           Elevate your job applications with cutting-edge AI tools.
         </p>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <div className="card bg-white rounded-xl shadow-md p-4 md:p-6 border-2 border-purple-200 transition-all duration-300 hover:animate-liftHover">
-            <HiSparkles className="w-10 h-10 md:w-14 md:h-14 mx-auto mb-3 md:mb-4 text-purple-600 transition-transform hover:rotate-12" aria-hidden="true" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6">
+          <div className="card bg-white rounded-lg md:rounded-xl shadow-sm md:shadow-md p-4 md:p-5 lg:p-6 border border-purple-100 md:border-2 md:border-purple-200 transition-all duration-300 hover:animate-liftHover h-full flex flex-col">
+            <HiSparkles className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 mx-auto mb-3 md:mb-4 text-purple-600 transition-transform hover:rotate-12" aria-hidden="true" />
             <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">
               AI-Enhanced Summaries
             </h3>
-            <p className="text-gray-600 text-xs md:text-sm">
+            <p className="text-gray-600 text-xs md:text-sm flex-grow">
               Create tailored summaries with our intelligent AI assistant.
             </p>
           </div>
-          <div className="card bg-white rounded-xl shadow-md p-4 md:p-6 border-2 border-purple-200 transition-all duration-300 hover:animate-liftHover">
-            <HiTemplate className="w-10 h-10 md:w-14 md:h-14 mx-auto mb-3 md:mb-4 text-purple-600 transition-transform hover:rotate-12" aria-hidden="true" />
+          <div className="card bg-white rounded-lg md:rounded-xl shadow-sm md:shadow-md p-4 md:p-5 lg:p-6 border border-purple-100 md:border-2 md:border-purple-200 transition-all duration-300 hover:animate-liftHover h-full flex flex-col">
+            <HiTemplate className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 mx-auto mb-3 md:mb-4 text-purple-600 transition-transform hover:rotate-12" aria-hidden="true" />
             <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">
               Stylish Templates
             </h3>
-            <p className="text-gray-600 text-xs md:text-sm">
+            <p className="text-gray-600 text-xs md:text-sm flex-grow">
               Select from a range of elegant, customizable designs.
             </p>
           </div>
-          <div className="card bg-white rounded-xl shadow-md p-4 md:p-6 border-2 border-purple-200 transition-all duration-300 hover:animate-liftHover">
-            <HiDocumentDownload className="w-10 h-10 md:w-14 md:h-14 mx-auto mb-3 md:mb-4 text-purple-600 transition-transform hover:rotate-12" aria-hidden="true" />
+          <div className="card bg-white rounded-lg md:rounded-xl shadow-sm md:shadow-md p-4 md:p-5 lg:p-6 border border-purple-100 md:border-2 md:border-purple-200 transition-all duration-300 hover:animate-liftHover h-full flex flex-col">
+            <HiDocumentDownload className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 mx-auto mb-3 md:mb-4 text-purple-600 transition-transform hover:rotate-12" aria-hidden="true" />
             <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">
               Instant PDF Export
             </h3>
-            <p className="text-gray-600 text-xs md:text-sm">
+            <p className="text-gray-600 text-xs md:text-sm flex-grow">
               Export your resume as a professional PDF in seconds.
             </p>
           </div>
-          <div className="card bg-white rounded-xl shadow-md p-4 md:p-6 border-2 border-purple-200 transition-all duration-300 hover:animate-liftHover">
-            <HiEye className="w-10 h-10 md:w-14 md:h-14 mx-auto mb-3 md:mb-4 text-purple-600 transition-transform hover:rotate-12" aria-hidden="true" />
+          <div className="card bg-white rounded-lg md:rounded-xl shadow-sm md:shadow-md p-4 md:p-5 lg:p-6 border border-purple-100 md:border-2 md:border-purple-200 transition-all duration-300 hover:animate-liftHover h-full flex flex-col">
+            <HiEye className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 mx-auto mb-3 md:mb-4 text-purple-600 transition-transform hover:rotate-12" aria-hidden="true" />
             <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-2">
               Live Editing Preview
             </h3>
-            <p className="text-gray-600 text-xs md:text-sm">
+            <p className="text-gray-600 text-xs md:text-sm flex-grow">
               Watch your changes live as you build your resume.
             </p>
           </div>
         </div>
-        <div className="mt-8 md:mt-10 animate-fadeInUp flex flex-col sm:flex-row justify-center gap-4 md:gap-8">
+        <div className="mt-6 md:mt-8 lg:mt-10 animate-fadeInUp flex flex-col sm:flex-row justify-center gap-3 md:gap-4 lg:gap-6">
           <Link href="/template" className="inline-flex justify-center">
             <button
               type="button"
-              className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-3 rounded-full transition-all duration-300 font-semibold text-sm md:text-base lg:text-lg hover:animate-liftHover w-full sm:w-auto"
+              className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full transition-all duration-300 font-semibold text-sm md:text-base lg:text-lg hover:animate-liftHover w-full sm:w-auto"
               aria-label="Start Building Your Resume"
             >
               Build New Resume
@@ -224,16 +219,14 @@ export default function Features() {
           <Link href="/upload-resume" className="inline-flex justify-center">
             <button
               type="button"
-              className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-3 rounded-full transition-all duration-300 font-semibold text-sm md:text-base lg:text-lg hover:animate-liftHover w-full sm:w-auto"
+              className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 rounded-full transition-all duration-300 font-semibold text-sm md:text-base lg:text-lg hover:animate-liftHover w-full sm:w-auto"
               aria-label="Enhance Your Existing Resume"
             >
               Enhance Existing Resume
             </button>
           </Link>
         </div>
-{/*         <p className="text-gray-400 text-xs mt-4 md:mt-6 animate-fadeInUp">
-          Last Updated: 04:24 PM PKT, Aug 03, 2025
-        </p> */}
+       
       </div>
     </section>
   );
