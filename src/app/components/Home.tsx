@@ -211,7 +211,7 @@ export default function Home() {
         </div>
 
         {/* Heading */}
-        <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black md:mr-[15%] lg:mr-[10%]">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-black md:mr-[15%] lg:mr-[10%]">
           BUILD <span className="font-bold">A WORLD</span> CLASS
         </h2>
 
@@ -219,13 +219,13 @@ export default function Home() {
           {/* ELITE CV with Yellow Highlight */}
           <div className="relative inline-block md:-mb-16 lg:-mb-20">
             <span className="absolute inset-0 bg-yellow-300 h-4 md:h-5 lg:h-6 top-1/2 -translate-y-1/2 z-0 transform md:scale-110 lg:scale-125"></span>
-            <span className="relative text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-thin tracking-wider z-10 px-2">
+            <span className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-thin tracking-wider z-10 px-2">
               ELITE CV
             </span>
           </div>
 
           {/* DESIGNER */}
-          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-black mt-2 md:mt-0">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-black mt-2 md:mt-0">
             DESIGNER<span className="text-black">.</span>
           </h2>
 
