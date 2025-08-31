@@ -2419,7 +2419,7 @@ export default function Templates() {
 
                 {/* Sort and View Controls */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 md:gap-4">
-                  <select
+{/*                   <select
                     value={sortBy}
                     onChange={(e) =>
                       setSortBy(
@@ -2432,7 +2432,22 @@ export default function Templates() {
                     <option value="popularity">Sort by Popularity</option>
                     <option value="name">Sort by Name</option>
                     <option value="category">Sort by Category</option>
-                  </select>
+                  </select> */}
+                      <select
+  value={sortBy}
+  onChange={(e) =>
+    setSortBy(
+      e.target.value as "popularity" | "name" | "category" | "id"
+    )
+  }
+  className="px-3 py-2 border border-gray-200 rounded-lg text-xs md:text-sm appearance-none bg-white relative z-10"
+>
+  <option value="id">Sort by Order</option>
+  <option value="popularity">Sort by Popularity</option>
+  <option value="name">Sort by Name</option>
+  <option value="category">Sort by Category</option>
+</select>
+
 
                   <div className="flex items-center gap-3">
                     <label className="flex items-center text-xs md:text-sm">
