@@ -462,9 +462,6 @@
 //     </section>
 //   );
 // }
-
-
-
 'use client';
 import Link from "next/link";
 import Image from "next/image";
@@ -529,7 +526,7 @@ export default function ActiveTemplates() {
   const getVisibleTemplates = () => {
     const totalTemplates = activeTemplates.length;
     const visibleTemplates = [];
-    let count = isMobile ? 1 : (window.innerWidth < 1024 ? 2 : 3);
+    const count = isMobile ? 1 : (window.innerWidth < 1024 ? 2 : 3); // Changed let to const
 
     for (let i = 0; i < count; i++) {
       const index = (currentIndex + i) % totalTemplates;
