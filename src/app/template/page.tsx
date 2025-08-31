@@ -985,14 +985,14 @@ export default function Templates() {
                 <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
                   {templateConfigs.length}
                 </div>
-                <div className="text-sm text-gray-600">Templates</div>
+                <div className="text-sm text-gray-600">AI Templates</div>
               </div>
               <div className="w-px h-12 bg-gray-300"></div>
               <div className="text-center">
                 <div className="text-3xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
                   100%
                 </div>
-                <div className="text-sm text-gray-600">Professional</div>
+                <div className="text-sm text-gray-600">AI Optimized</div>
               </div>
               <div className="w-px h-12 bg-gray-300"></div>
               <div className="text-center">
@@ -1012,10 +1012,12 @@ export default function Templates() {
 
             <div className="mt-8 text-gray-600">
               <p className="mb-2">
-                🎨 Professionally designed templates for optimal resume performance
+{/*                 🎨 Professionally designed templates for optimal resume performance */}
+                    🤖 Powered by advanced AI algorithms for optimal resume performance
               </p>
               <p className="text-sm mb-4">
-                More templates are being developed. Have suggestions?
+{/*                 More templates are being developed. Have suggestions? */}
+                    More AI templates are being developed. Have suggestions?
                 <Link
                   href="/contact"
                   className="text-purple-600 hover:underline font-semibold ml-1"
