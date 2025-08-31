@@ -682,15 +682,18 @@ export default function Templates() {
               <FiZap className="text-3xl text-white" />
             </div>
             <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 bg-clip-text text-transparent mb-4">
-              Professional Resume Templates
+               {/* Professional Resume Templates */}
+                  AI-Powered Resume Templates
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+                  
               Choose from our professionally designed templates that are ATS-friendly and perfect for any industry
             </p>
             <div className="flex items-center justify-center space-x-6 text-sm text-gray-500">
               <div className="flex items-center">
-                <FiZap className="mr-1 text-purple-500" />
-                Professional Design
+                <FiZap className="mr-1 text-blue-500" />
+                {/* Professional Design */}
+                    AI-Optimized
               </div>
               <div className="flex items-center">
                 <FiTrendingUp className="mr-1 text-green-500" />
@@ -806,7 +809,7 @@ export default function Templates() {
 
               {/* Results Count */}
               <div className="text-sm text-gray-600">
-                Showing {filteredTemplates.length} of {templateConfigs.length} templates
+                Showing {filteredTemplates.length} of {templateConfigs.length} AI templates
                 {selectedCategory !== 'all' && ` in ${selectedCategory}`}
                 {searchTerm && ` matching "${searchTerm}"`}
               </div>
