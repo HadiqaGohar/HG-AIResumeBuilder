@@ -27,7 +27,7 @@ export default function Home() {
         </div>
 
         {/* ENGINEER Architect*/}
-        <h2 className="flex text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl  font-bold text-black ml-auto sm:ml-[43%] md:ml-[48%] lg:ml-[38%] xl:ml-[33%] 2xl:ml-[15%]">
+        <h2 className="flex text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl  font-bold text-black ml-[25%] sm:ml-[43%] md:ml-[48%] lg:ml-[38%] xl:ml-[33%] 2xl:ml-[15%]">
           DESIGNER <span className="text-black rounded-full">.</span>
         </h2>
 
