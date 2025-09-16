@@ -261,8 +261,9 @@ export default function TermsOfUse() {
           <section className="hover:bg-gray-50 p-2 sm:p-3 rounded-lg transition-colors duration-200">
             <h2 className="text-xl sm:text-2xl font-semibold text-purple-700 mb-1 sm:mb-2">7. Limitation of Liability</h2>
             <p className="text-gray-600 text-sm sm:text-base">
-              Our services are provided "as is." We are not liable for any damages arising from your use of the platform, including errors in resume content.
-            </p>
+  Our services are provided &quot;as is.&quot; We are not liable for any damages arising from your use of the platform, including errors in resume content.
+</p>
+
           </section>
 
           <section className="hover:bg-gray-50 p-2 sm:p-3 rounded-lg transition-colors duration-200">
