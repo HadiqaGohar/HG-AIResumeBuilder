@@ -70,10 +70,10 @@
 // }
 
 
-import { NextRequest, NextResponse } from "next/server";
-// import clientPromise from "../../../../lib/mongodb";
-import clientPromise from "../../../../../lib/mongodb";
 
+import { NextRequest, NextResponse } from "next/server";
+import clientPromise from "../../../../../lib/mongodb";
+import { ObjectId } from "mongodb";
 
 export async function POST(request: NextRequest) {
   try {
@@ -170,7 +170,7 @@ export async function DELETE(request: NextRequest) {
     const db = client.db(process.env.MONGODB_DB);
     const collection = db.collection("notifications");
 
-    const result = await collection.deleteOne({ _id: id });
+    const result = await collection.deleteOne({ _id: new ObjectId(id) });
 
     if (result.deletedCount === 0) {
       return NextResponse.json({ error: "Subscriber not found" }, { status: 404 });
