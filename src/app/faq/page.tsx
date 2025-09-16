@@ -389,7 +389,7 @@ export default function FAQ() {
             Still have questions?
           </h3>
           <p className="text-gray-600 mb-2 sm:mb-4 text-sm sm:text-base">
-            Can't find what you're looking for? We're here to help!
+            Can&apos;t find what you&apos;re looking for? We&apos;re here to help!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
