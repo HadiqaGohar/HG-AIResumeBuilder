@@ -319,7 +319,7 @@ import { useSession } from "next-auth/react";
 import { useResumeStore } from "../../../lib/store";
 import { frontendAPI, apiUtils } from "../../../lib/api";
 import { toast } from "react-hot-toast";
-import { FiUpload, FiFile, FiCheck, FiX, FiActivity, FiZap, FiBrush } from "react-icons/fi";
+import { FiUpload, FiFile, FiCheck, FiX, FiActivity, FiZap, FiLayout } from "react-icons/fi";
 
 export default function UploadResume() {
   const { setResumeData, setTemplateId } = useResumeStore();
@@ -605,7 +605,7 @@ export default function UploadResume() {
 
           <div className="text-center p-2 sm:p-3">
             <div className="w-8 h-8 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2">
-              <FiBrush className="w-4 h-4 sm:w-6 sm:h-6 text-green-600" />
+              <FiLayout className="w-4 h-4 sm:w-6 sm:h-6 text-green-600" />
             </div>
             <h3 className="font-semibold text-gray-800 text-xs sm:text-base mb-1 sm:mb-2">
               Beautiful Templates
