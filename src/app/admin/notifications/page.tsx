@@ -878,7 +878,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { FiMail, FiUsers, FiCalendar, FiDownload, FiLock, FiEye, FiEyeOff, FiZap, FiTrendingUp, FiAward, FiRefreshCw, FiTrash2 } from "react-icons/fi";
+import { FiMail, FiUsers, FiCalendar, FiDownload, FiLock, FiEye, FiEyeOff, FiZap, FiTrendingUp, FiAward, FiRefreshCw
+        // ,FiTrash2
+       } from "react-icons/fi";
 import toast from "react-hot-toast";
 
 interface Subscriber {
@@ -975,31 +977,31 @@ export default function NotificationsAdmin() {
     URL.revokeObjectURL(url);
   };
 
-  const handleDelete = async (id: string) => {
-    if (confirm("Are you sure you want to delete this subscriber?")) {
-      try {
-        const response = await fetch(`/api/notifications/${id}`, {
-          method: "DELETE",
-        });
+  // const handleDelete = async (id: string) => {
+  //   if (confirm("Are you sure you want to delete this subscriber?")) {
+  //     try {
+  //       const response = await fetch(`/api/notifications/${id}`, {
+  //         method: "DELETE",
+  //       });
 
-        if (response.ok) {
-          const deletedSubscriber = subscribers.find((s) => s._id === id);
-          setSubscribers(subscribers.filter((s) => s._id !== id));
-          setStats((prev) => ({
-            ...prev,
-            count: prev.count - 1,
-            [deletedSubscriber?.type]: (prev[deletedSubscriber?.type as keyof Stats] || 0) - 1,
-          }));
-          toast.success("Subscriber deleted successfully!");
-        } else {
-          throw new Error("Failed to delete subscriber");
-        }
-      } catch (error) {
-        console.error("Error deleting subscriber:", error);
-        toast.error("Failed to delete subscriber. Check console for details.");
-      }
-    }
-  };
+  //       if (response.ok) {
+  //         const deletedSubscriber = subscribers.find((s) => s._id === id);
+  //         setSubscribers(subscribers.filter((s) => s._id !== id));
+  //         setStats((prev) => ({
+  //           ...prev,
+  //           count: prev.count - 1,
+  //           [deletedSubscriber?.type]: (prev[deletedSubscriber?.type as keyof Stats] || 0) - 1,
+  //         }));
+  //         toast.success("Subscriber deleted successfully!");
+  //       } else {
+  //         throw new Error("Failed to delete subscriber");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error deleting subscriber:", error);
+  //       toast.error("Failed to delete subscriber. Check console for details.");
+  //     }
+  //   }
+  // };
 
   const getTypeDisplayName = (type: string) => {
     switch (type) {
@@ -1261,9 +1263,9 @@ export default function NotificationsAdmin() {
                     <th className="px-2 sm:px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Status
                     </th>
-                    <th className="px-2 sm:px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+{/*                     <th className="px-2 sm:px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Actions
-                    </th>
+                    </th> */}
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
@@ -1299,7 +1301,7 @@ export default function NotificationsAdmin() {
                           {subscriber.subscribed ? "Active" : "Inactive"}
                         </span>
                       </td>
-                      <td className="px-2 sm:px-4 py-2 whitespace-nowrap text-sm text-gray-500">
+{/*                       <td className="px-2 sm:px-4 py-2 whitespace-nowrap text-sm text-gray-500">
                         <button
                           onClick={() => handleDelete(subscriber._id)}
                           className="text-red-600 hover:text-red-800 transition-colors flex items-center gap-1"
@@ -1307,7 +1309,7 @@ export default function NotificationsAdmin() {
                           <FiTrash2 className="w-4 h-4" />
                           Delete
                         </button>
-                      </td>
+                      </td> */}
                     </tr>
                   ))}
                 </tbody>
