@@ -278,7 +278,7 @@ export default function PrivacyPolicy() {
               3. Data Sharing
             </h2>
             <p className="text-gray-600 text-sm sm:text-base">
-              We don’t sell your data. We may share it with:
+              We don&apos;t sell your data. We may share it with:
               <ul className="list-disc pl-4 sm:pl-6 mt-1 sm:mt-2 space-y-1">
                 <li>
                   Trusted service providers for platform operations (e.g.,
