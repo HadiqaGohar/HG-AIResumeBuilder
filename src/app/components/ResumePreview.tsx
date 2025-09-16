@@ -272,10 +272,6 @@
 
 
 
-
-
-
-
 "use client";
 
 import React from "react";
@@ -305,49 +301,48 @@ const ResumePreview: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
+    <div className="bg-white rounded-xl shadow-md overflow-hidden max-w-[90%] mx-auto sm:max-w-xl">
       {/* Action Buttons */}
-      <div className="bg-gray-50 px-2 sm:px-4 py-2 sm:py-3 border-b flex flex-col sm:flex-row justify-between items-center">
-        <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-1 sm:mb-0">
+      <div className="bg-gray-50 px-1 sm:px-2 py-1 sm:py-2 border-b flex flex-col sm:flex-row justify-between items-center">
+        <h3 className="text-sm sm:text-base font-semibold text-gray-800 mb-1 sm:mb-0">
           Resume Preview - Template {templateId || "1"}
         </h3>
-        <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2">
+        <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-1">
           <button
             onClick={handleEdit}
-            className="flex items-center px-2 sm:px-3 py-1 sm:py-2 text-purple-600 hover:text-purple-800 hover:bg-purple-50 rounded-lg transition-colors text-xs sm:text-sm"
+            className="flex items-center px-1 sm:px-2 py-1 text-purple-600 hover:text-purple-800 hover:bg-purple-50 rounded-lg transition-colors text-xs"
             title="Edit Resume"
           >
-            <FiEdit3 className="w-3 sm:w-4 h-3 sm:h-4 mr-1" />
+            <FiEdit3 className="w-3 h-3 mr-1" />
             Edit
           </button>
           <button
             onClick={handlePrint}
-            className="flex items-center px-2 sm:px-3 py-1 sm:py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg transition-colors text-xs sm:text-sm"
+            className="flex items-center px-1 sm:px-2 py-1 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg transition-colors text-xs"
             title="Print Resume"
           >
-            <FiPrinter className="w-3 sm:w-4 h-3 sm:h-4 mr-1" />
+            <FiPrinter className="w-3 h-3 mr-1" />
             Print
           </button>
           <button
             onClick={handleDownload}
-            className="flex items-center px-2 sm:px-3 py-1 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm"
+            className="flex items-center px-1 sm:px-2 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs"
           >
-            <FiDownload className="w-3 sm:w-4 h-3 sm:h-4 mr-1" />
+            <FiDownload className="w-3 h-3 mr-1" />
             Download
           </button>
         </div>
       </div>
 
       {/* Template Renderer */}
-      <div className="template-preview-container relative p-2 sm:p-4">
+      <div className="template-preview-container relative p-1 sm:p-2">
         {/* Preview Container with Print-like Styling */}
-        <div className="preview-wrapper bg-gray-100">
+        <div className="preview-wrapper bg-gray-100 overflow-auto">
           <div
-            className="resume-page bg-white shadow-lg mx-auto"
+            className="resume-page bg-white mx-auto"
             style={{
               width: "100%",
-              maxWidth: "8.5in",
-              minHeight: "11in",
+              maxWidth: "4.5in",
               margin: "0 auto",
             }}
           >
@@ -360,13 +355,13 @@ const ResumePreview: React.FC = () => {
         </div>
 
         {/* Floating Edit Button */}
-        <div className="fixed bottom-2 sm:bottom-4 right-2 sm:right-4 z-50 print-hidden">
+        <div className="fixed bottom-1 sm:bottom-2 right-1 sm:right-2 z-50 print-hidden">
           <button
             onClick={handleEdit}
-            className="flex items-center px-2 sm:px-4 py-1 sm:py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full shadow-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 text-xs sm:text-sm"
+            className="flex items-center px-2 sm:px-3 py-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full shadow-md hover:from-purple-700 hover:to-blue-700 transition-all duration-300 text-xs"
             title="Quick Edit"
           >
-            <FiEdit3 className="w-3 sm:w-4 h-3 sm:h-4 mr-1" />
+            <FiEdit3 className="w-3 h-3 mr-1" />
             Quick Edit
           </button>
         </div>
@@ -382,7 +377,6 @@ const ResumePreview: React.FC = () => {
             width: 100% !important;
             max-width: none !important;
             box-shadow: none !important;
-            min-height: auto !important;
           }
           .print-hidden {
             display: none !important;
@@ -391,30 +385,31 @@ const ResumePreview: React.FC = () => {
 
         @media screen and (min-width: 1024px) {
           .resume-page {
-            width: 8.5in;
-            min-height: 11in;
+            width: 4.5in;
           }
         }
 
         @media screen and (max-width: 1023px) {
           .resume-page {
-            width: 90vw;
-            min-height: 120vh;
+            width: 85vw;
           }
         }
 
         @media screen and (max-width: 640px) {
           .resume-page {
-            width: 85vw;
-            min-height: 140vh;
+            width: 80vw;
           }
         }
 
         @media screen and (max-width: 320px) {
           .resume-page {
-            width: 80vw;
-            min-height: 160vh;
+            width: 75vw;
           }
+        }
+
+        .preview-wrapper {
+          max-height: 70vh;
+          overflow-y: auto;
         }
       `}</style>
     </div>
