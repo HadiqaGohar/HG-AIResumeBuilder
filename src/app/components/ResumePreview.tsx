@@ -170,14 +170,14 @@ const ResumePreview: React.FC = () => {
             <FiEdit3 className="w-3 sm:w-4 h-3 sm:h-4 mr-1" />
             Edit
           </button>
-{/*           <button
+          <button
             onClick={handlePrint}
             className="flex items-center px-2 sm:px-3 py-1 sm:py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-200 rounded-lg transition-colors text-xs sm:text-sm"
             title="Print Resume"
           >
             <FiPrinter className="w-3 sm:w-4 h-3 sm:h-4 mr-1" />
             Print
-          </button> */}
+          </button>
           <button
             onClick={handleDownload}
             className="flex items-center px-2 sm:px-4 py-1 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm"
