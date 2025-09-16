@@ -120,13 +120,13 @@ function Header() {
             >
               <FiMail className="w-4 h-4 mr-2" /> Home
             </Link>
-            <Link
-              href="/upload-resume/ai-templates"
+{/*             <Link
+              href="/upload-resume"
               className="flex items-center text-blue-600 hover:text-blue-700"
               onClick={() => setIsOpen(false)}
             >
               <FiZap className="w-4 h-4 mr-2" /> AI Templates
-            </Link>
+            </Link> */}
             <Link
               href="/upload-resume"
               className="flex items-center text-gray-700 hover:text-blue-600"
